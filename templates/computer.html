@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Game - Computer Screen</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>KBC Game</h1>
+        <h2>Current Question:</h2>
+        <p>{{ question }}</p>
+        <img src="{{ qr_code }}" alt="QR Code">
+        <h2 id="congratulations-message"></h2>
+    </div>
+
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        socket.on('correct_answer', function(data) {
+            document.getElementById('congratulations-message').innerHTML = 
+                'Congratulations ' + data.name + '!';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #1e90ff; 
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #4caf50; 
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1c86ee;
+}
+
+
+img {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+#congratulations-message {
+    font-size: 1.5rem;
+    color: #ff4500; 
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Game - Mobile</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>KBC Game</h1>
+        <p>{{ question }}</p>
+        {% if message %}
+            <h2>{{ message }}</h2>
+        {% endif %}
+        <form action="/submit_answer" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="answer">Your Answer:</label>
+            <input type="text" id="answer" name="answer" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
