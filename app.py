@@ -20,10 +20,12 @@ current_question = 0
 
 @app.route('/')
 def home():
+    # This will render the computer.html file with the first question and QR code
     return render_template('computer.html', question=questions[current_question]['question'], qr_code=generate_qr())
 
 @app.route('/mobile')
 def mobile_view():
+    # This will render the mobile.html file for mobile users
     return render_template('mobile.html', question=questions[current_question]['question'])
 
 @app.route('/submit_answer', methods=['POST'])
@@ -36,15 +38,14 @@ def submit_answer():
         socketio.emit('correct_answer', {'name': player_name})
         current_question += 1
         if current_question >= len(questions):
-            current_question = 0  
+            current_question = 0  # Reset to the first question if all are answered
         return render_template('mobile.html', message="Congratulations, your answer is correct!", question=questions[current_question]['question'])
     else:
-    
         return render_template('mobile.html', message="Wrong answer, please try again!", question=questions[current_question]['question'])
 
 def generate_qr():
     """Generate QR code linking to the mobile view"""
-    local_ip = 'http://192.168.29.210:5000/mobile'  # My IP adress [Enter your IP adress here]
+    local_ip = 'http://192.168.29.210:5000/mobile'  # Your local IP address
     img = qrcode.make(local_ip)
     buf = io.BytesIO()
     img.save(buf)

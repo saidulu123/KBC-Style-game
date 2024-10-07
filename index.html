@@ -9,8 +9,11 @@
 <body>
     <div class="container">
         <h1>Welcome to KBC Game!</h1>
-        <p>Click the button below to start playing.</p>
-        <a href="/" class="start-button">Start Game</a>
+        <p>Starting the game...</p>
+        <script>
+            // Automatically redirect to the main game page
+            window.location.href = "/";
+        </script>
     </div>
 
     <style>
@@ -19,18 +22,6 @@
             text-align: center;
             background-color: #f4f4f4;
             padding: 50px;
-        }
-        .start-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: #fff;
-            background-color: #007bff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .start-button:hover {
-            background-color: #0056b3;
         }
     </style>
 </body>
